@@ -75,10 +75,6 @@ def show_leads():
 
 
 def insert_leads_and_price(leads: List):
-    # response = requests.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
-    # data = response.json()
-    # price = Price(price=data['bitcoin']['usd'])
-
     cnx = mysql.connector.connect(user='root', password='mysql', host='localhost', database='mydatabase')
     cursor = cnx.cursor()
 
@@ -201,9 +197,6 @@ def get_bitcoins(request: Request, days: int, interval: str):
     # Render the chart in the HTML template using Jinja2
     chart = fig.to_html(full_html=False)
     return templates.TemplateResponse("index.html", {"request": request, "chart": chart})
-    # return templates.TemplateResponse("index.html", {"request": request, "bitcoins": bitcoins})
-    # return {'message': 'SUCCESS', 'data': bitcoins}
-
 
 if __name__ == "__main__":
     uvicorn.run("main:app",

@@ -16,7 +16,6 @@ CREATE TABLE leads (
     phone_work VARCHAR(255),
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    bitcoin_price DECIMAL(18, 2)
 );
 select * from leads;
 ```
@@ -25,4 +24,9 @@ select * from leads;
 ```
 pip install -r requirements.txt
 python main.py
+```
+
+## How to get Bitcoin chart (API Endpoint)
+```
+http://0.0.0.0:8080/bitcoin_price?days=30&interval=monthly
 ```
