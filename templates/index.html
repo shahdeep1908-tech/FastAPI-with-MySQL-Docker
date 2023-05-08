@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Prices</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 800px;
+            height: 400px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chart-line {
+            border: 2px solid #00bfff;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Bitcoin Prices Chart</h1>
+<div>
+    {{ chart | safe }}
+</div>
+
+<!--    <canvas id="myChart"></canvas>-->
+<!--    <script>-->
+<!--        var ctx = document.getElementById('myChart').getContext('2d');-->
+<!--        var myChart = new Chart(ctx, {-->
+<!--            type: 'line',-->
+<!--            data: {-->
+<!--                labels: [-->
+<!--                    {% for bitcoin in bitcoins %}-->
+<!--                        "{{ bitcoin.timestamp }}",-->
+<!--                    {% endfor %}-->
+<!--                ],-->
+<!--                datasets: [{-->
+<!--                    label: 'Bitcoin Prices',-->
+<!--                    data: [-->
+<!--                        {% for bitcoin in bitcoins %}-->
+<!--                            {{ bitcoin.price }},-->
+<!--                        {% endfor %}-->
+<!--                    ],-->
+<!--                    borderColor: 'rgb(255, 99, 132)',-->
+<!--                    backgroundColor: 'rgba(255, 99, 132, 0.5)',-->
+<!--                    borderWidth: 1-->
+<!--                }]-->
+<!--            },-->
+<!--            options: {-->
+<!--                scales: {-->
+<!--                    yAxes: [{-->
+<!--                        ticks: {-->
+<!--                            beginAtZero: true-->
+<!--                        }-->
+<!--                    }]-->
+<!--                }-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+</body>
+</html>
